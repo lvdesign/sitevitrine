@@ -62,7 +62,7 @@
   }, 300);
 
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('https://lvdesign.github.io/sitevitrine/basicServiceWorker.js', { scope: 'https://lvdesign.github.io/sitevitrine/' }).then(function(reg) {
+    navigator.serviceWorker.register('https://lvdesign.github.io/sitevitrine/service-worker.js', { scope: 'https://lvdesign.github.io/sitevitrine/' }).then(function(reg) {
       // registration worked
       console.log('Registration succeeded. Scope is ' + reg.scope);
     }).catch(function(error) {
