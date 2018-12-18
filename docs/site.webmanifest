@@ -30,6 +30,6 @@
     "background_color": "#222222",
     "theme_color": "#000000",
     "orientation": "natural",
-    "start_url": "/",
+    "start_url": "/index.html",
     "categories": ["business", "landing page", "web"]
 }
