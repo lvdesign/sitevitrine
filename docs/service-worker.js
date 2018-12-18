@@ -15,7 +15,11 @@
                   '/js/main.min.js',
                   '/css/bootstrap.min.css',
                   '/css/main.min.css',
-                  '/img/',
+                  '/img/fonds/fondFooter.svg',
+                  '/img/imgfleurs/',
+                  '/img/picto/pictoF.svg',
+                  '/img/picto/pictoFicon.svg',
+                  '/',
                   '/index.html',
                   '/offline.html'
               ]);
