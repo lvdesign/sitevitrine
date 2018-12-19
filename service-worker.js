@@ -5,23 +5,23 @@
 // http://creativecommons.org/publicdomain/zero/1.0/
   // Update 'version' if you need to refresh the cache
   var staticCacheName = 'static';
-  var version = 'v1::SiteVitrine';
+  var version = 'v2::SiteVitrine';
 
   // Store core files in a cache (including a page to display when offline)
   function updateStaticCache() {
       return caches.open(version + staticCacheName)
           .then(function (cache) {
               return cache.addAll([
-                  '/js/main.min.js',
-                  '/css/bootstrap.min.css',
-                  '/css/main.min.css',
-                  '/img/fonds/fondFooter.svg',
-                  '/img/imgfleurs/ex1.png',
-                  '/img/picto/pictoF.svg',
-                  '/img/picto/pictoFicon.svg',
+                  '../js/main.min.js',
+                  'css/bootstrap.min.css',
+                  'css/main.min.css',
+                  'img/fonds/fondFooter.svg',
+                  'img/imgfleurs/ex1.png',
+                  'img/picto/pictoF.svg',
+                  'img/picto/pictoFicon.svg',
                   '/',
-                  '/index.html',
-                  '/offline.html'
+                  'index.html',
+                  'offline.html'
               ]);
           });
   };
@@ -54,7 +54,7 @@
           event.respondWith(
               fetch(request)
                   .catch(function () {
-                      return caches.match('/offline.html');
+                      return caches.match('offline.html');
                   })
           );
           return;
@@ -86,7 +86,7 @@
                   .catch(function () {
                       return caches.match(request)
                           .then(function (response) {
-                              return response || caches.match('/offline.html');
+                              return response || caches.match('offline.html');
                           })
                   })
           );
