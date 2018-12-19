@@ -1,5 +1,6 @@
 (function() {
-  'use strict';
+
+'use strict';
 
 // Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
 // http://creativecommons.org/publicdomain/zero/1.0/
@@ -12,16 +13,26 @@
       return caches.open(version + staticCacheName)
           .then(function (cache) {
               return cache.addAll([
-                  '../js/main.min.js',
-                  'css/bootstrap.min.css',
-                  'css/main.min.css',
-                  'img/fonds/fondFooter.svg',
-                  'img/imgfleurs/ex1.png',
-                  'img/picto/pictoF.svg',
-                  'img/picto/pictoFicon.svg',
+                  '/js/main.min.js',
+                  '/css/bootstrap.min.css',
+                  '/css/main.min.css',
+                  '/img/fonds/fondFooter.svg',
+                  '/img/imgfleurs/ex1.png',
+                  '/img/imgfleurs/ex2.png',
+                  '/img/imgfleurs/ex3.png',
+                  '/img/imgfleurs/ex4.png',
+                  '/img/imgfleurs/ex5.png',
+                  '/img/imgfleurs/ex6.png',
+                  '/img/imgfleurs/ex7.png',
+                  '/img/imgfleurs/ex8.png',
+                  '/img/insta/insta1.png',
+                  '/img/insta/insta2.png',
+                  '/img/insta/insta3.png',
+                  '/img/picto/pictoF.svg',
+                  '/img/roman-kraft-208004-unsplash.png',
                   '/',
-                  'index.html',
-                  'offline.html'
+                  '/index.html',
+                  '/offline.html'
               ]);
           });
   };
@@ -54,7 +65,7 @@
           event.respondWith(
               fetch(request)
                   .catch(function () {
-                      return caches.match('offline.html');
+                      return caches.match('/offline.html');
                   })
           );
           return;
@@ -86,7 +97,7 @@
                   .catch(function () {
                       return caches.match(request)
                           .then(function (response) {
-                              return response || caches.match('offline.html');
+                              return response || caches.match('/offline.html');
                           })
                   })
           );
