@@ -3,7 +3,7 @@
   'use strict';
   // carousel
   $('.carousel').carousel({
-    interval: 2000,
+    interval: 1500,
   });
 
   // Smooth scrolling using jQuery easing

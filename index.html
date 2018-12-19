@@ -6,13 +6,15 @@ python3 -m http.server
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Mon site vitrine</title>
-  <meta name="description" content="Mon site vitrine">
+  <title>Site Vitrine - example </title>
+  <meta name="description" content="Site vitrine, exemple de site RWD pour commerces et artisans.">
+  <meta name="keywords" content="site vitrine, webdesign, site internet, commerce, artisan, digital" >
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="me" href="lvdesign.com.fr" >
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -20,6 +22,16 @@ python3 -m http.server
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- Style site -->
   <link rel="stylesheet" href="css/main.min.css">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131229648-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-131229648-1');
+</script>
 </head>
 
 <body>
@@ -85,23 +97,7 @@ python3 -m http.server
 
 </nav>
     <!--/.Navbar-->
-
-  <!--Mask
-  .view is a wrapper for our background image,
-  which lets us add a mask to it.
-  Thanks to this mask we can make our image darker or lighter,
-  which helps us to make your content more visible.
-
-.mask is the element with absolute position,
-which makes it cover our background image.
-And because it covers the image,
-we can use it as a mask and manipulate the colors.
-
-We've also set id="intro"
-for the .view element. We'll need that in a second.
-.h-100 class makes the element stretch to 100% of available height.
-  -->
-      <!--Mask-->
+      <!--Banner-->
             <div id="banner">
                 <div class="mask rgba-black-strong">
                     <div class="container-fluid d-flex align-items-center justify-content-center h-100">
@@ -110,14 +106,17 @@ for the .view element. We'll need that in a second.
                                 <!-- Heading -->
                                 <h1 class="display-1 text-white pt-5 mb-2">Ma Vitrine</h1>
                                 <!-- Description -->
-                                <h4 class="text-white my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.</h4>
+                                <h4 class="font-weight-normal text-white my-4">Bonjour, vous êtes sur la démonstration du "site vitrine" de LVdesign.
+                                  Ce site est la base d'une solution pour présenter votre commerce ou boutique en ligne. Très simplement,
+                                  vous pourrez présenter à vos clients vos produits, vos services, votre situation
+                                  et aussi les dernieres nouveautés grâce à un lien vers instagram, facebook et twitter. Je suis à votre disposition pour toutes adaptations. Merci.</h4>
                                 <a class="js-scroll-trigger btn btn-light" href="#best-features" role="button">En savoir plus</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-      <!--/.Mask-->
+      <!--/ EndBanner-->
 
 </header>
 <!--Main Navigation-->
@@ -265,7 +264,10 @@ for the .view element. We'll need that in a second.
                     <div class="row">
                         <!--Grid column-->
             <div class="col-md-6 mb-4">
-
+                      <!--Excerpt-->
+                      <a href="" class="text-success">
+                          <h6 class="pb-1"><i class="fa fa-heart"></i><strong> Nos nouveautés sur Instagram</strong></h6>
+                      </a>
                 <!--Carousel Wrapper-->
                 <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
                   <!--Indicators-->
@@ -279,17 +281,17 @@ for the .view element. We'll need that in a second.
                   <div class="carousel-inner" role="listbox">
                     <!--First slide-->
                     <div class="carousel-item active">
-                      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(130).jpg" alt="First slide">
+                      <img class="d-block w-100" src="img/insta/insta1.png" alt="First slide">
                     </div>
                     <!--/First slide-->
                     <!--Second slide-->
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(129).jpg" alt="Second slide">
+                      <img class="d-block w-100" src="img/insta/insta2.png" alt="Second slide">
                     </div>
                     <!--/Second slide-->
                     <!--Third slide-->
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg" alt="Third slide">
+                      <img class="d-block w-100" src="img/insta/insta3.png" alt="Third slide">
                     </div>
                     <!--/Third slide-->
                   </div>
@@ -311,20 +313,12 @@ for the .view element. We'll need that in a second.
   <!--Grid column-->
                   <div class="col-md-6">
 
-                      <!--Excerpt-->
-                      <a href="" class="text-success">
-                          <h6 class="pb-1"><i class="fa fa-heart"></i><strong> Notre vision </strong></h6>
-                      </a>
-                      <h4 class="mb-3"><strong>This is title of the news</strong></h4>
-                      <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
-                          placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis
-                          debitis aut rerum.</p>
+                      <a class="twitter-timeline" href="https://twitter.com/lvdesign"
+            data-widget-id="352010766683082754" alt="le compte de lvdesign sur twitter, venez tweeter…"
+            title="le compte de lvdesign sur twitter, venez tweeter…">Tweets de @lvdesign</a>
+            <!--tweet js-->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-                      <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
-                          placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis
-                          debitis aut rerum.</p>
-                      <p>by <a><strong>Jessica Clark</strong></a>, 26/08/2016</p>
-                      <a class="btn btn-dark btn-md text-white" href="#!">Read more</a>
 
                   </div>
 <!--Grid column-->
@@ -432,9 +426,11 @@ for the .view element. We'll need that in a second.
             <h6 class="text-uppercase font-weight-bold">
                 <img src="img/picto/pictoF.svg" alt="logo-brand" /><strong>MAVITRINE</strong>
             </h6>
-            <p>Ut antur adisedis porem imagnis
-              qui archilia adi aut optatem iligend
-              andion re nulland aectis et earum.</p>
+            <p>Bonjour, vous êtes sur la démonstration du "site vitrine" de LVdesign.
+                Ce site est la base d'une solution pour présenter votre commerce ou boutique en ligne. Très simplement,
+                vous pourrez présenter à vos clients vos produits, vos services, votre situation
+                et aussi les dernieres nouveautés grâce à un lien vers instagram, facebook et twitter.
+                <a href="https://www.lvdesign.com.fr" alt="Contacter LVdesign">Je suis à votre disposition pour toutes adaptations.</a> Merci.</p>
         </div>
         <!--/.First column-->
 
@@ -503,7 +499,7 @@ for the .view element. We'll need that in a second.
     <!--Footer Links-->
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2018 Copyright/Conception
-      <a href="https://lvdesign.com.fr">LVdesign</a> | Images : <a href="https://unsplash.com/">Unsplash</a> | Thème : <a href="https://getbootstrap.com/docs/4.0/utilities/text/">Bootstrap 4
+      <a href="https://lvdesign.com.fr" alt="Contact LVdesign, webdesign services">LVdesign</a> | Images : <a href="https://unsplash.com/">Unsplash</a> | Thème : <a href="https://getbootstrap.com/docs/4.0/utilities/text/">Bootstrap 4
     </div>
     <div class="footer-copyright text-center py-3"></a>
       </div>
@@ -562,13 +558,6 @@ for the .view element. We'll need that in a second.
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>-->
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID.
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async defer></script>-->
 </body>
 
 </html>

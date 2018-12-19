@@ -16,7 +16,7 @@
                   '/css/bootstrap.min.css',
                   '/css/main.min.css',
                   '/img/fonds/fondFooter.svg',
-                  '/img/imgfleurs/',
+                  '/img/imgfleurs/ex1.png',
                   '/img/picto/pictoF.svg',
                   '/img/picto/pictoFicon.svg',
                   '/',
