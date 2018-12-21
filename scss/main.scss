@@ -119,7 +119,7 @@ textarea {
   body,
   header,
   #banner {
-height:100%;
+min-height:100%;
   }
 /* height: 100vw; https://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20%283%29.jpg -- roman-kraft-208004-unsplash.jpg*/
   #banner {
@@ -131,7 +131,7 @@ height:100%;
        display: -ms-flexbox;
        display: flex;
         max-height:100%;
-       height: 100vh;
+       min-height: 100vh;
        padding: 2rem 0;
 
    }

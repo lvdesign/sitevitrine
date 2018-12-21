@@ -17,6 +17,10 @@
                   '/sitevitrine/css/bootstrap.min.css',
                   '/sitevitrine/css/main.min.css',
                   '/sitevitrine/img/fonds/fondFooter.svg',
+                  '/sitevitrine/favicon-32x32.png',
+                  '/sitevitrine/android-chrome-192x192.png',
+                  '/sitevitrine/android-chrome-256x256.png',
+                  '/sitevitrine/apple-touch-icon.png',
                   '/sitevitrine/img/imgfleurs/ex1.png',
                   '/sitevitrine/img/imgfleurs/ex2.png',
                   '/sitevitrine/img/imgfleurs/ex3.png',
@@ -65,7 +69,7 @@
           event.respondWith(
               fetch(request)
                   .catch(function () {
-                      return caches.match('/offline.html');
+                      return caches.match('/sitevitrine/offline.html');
                   })
           );
           return;
@@ -97,7 +101,7 @@
                   .catch(function () {
                       return caches.match(request)
                           .then(function (response) {
-                              return response || caches.match('/offline.html');
+                              return response || caches.match('/sitevitrine/offline.html');
                           })
                   })
           );
@@ -112,7 +116,7 @@
                       .catch(function () {
                           // If the request is for an image, show an offline placeholder
                           if (request.headers.get('Accept').indexOf('image') !== -1) {
-                              return new Response('<svg width="400" height="300" role="img" aria-labelledby="offline-title" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><title id="offline-title">Offline</title><g fill="none" fill-rule="evenodd"><path fill="#D8D8D8" d="M0 0h400v300H0z"/><text fill="#9B9B9B" font-family="Helvetica Neue,Arial,Helvetica,sans-serif" font-size="72" font-weight="bold"><tspan x="93" y="172">offline</tspan></text></g></svg>', { headers: { 'Content-Type': 'image/svg+xml' }});
+                              return new Response('<svg width="400" height="300" role="img" aria-labelledby="offline-title" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><title id="offline-title">Offline Site Vitrine LVdesign</title><g fill="none" fill-rule="evenodd"><path fill="#D8D8D8" d="M0 0h400v300H0z"/><text fill="#9B9B9B" font-family="Helvetica Neue,Arial,Helvetica,sans-serif" font-size="72" font-weight="bold"><tspan x="93" y="172">offline</tspan></text></g></svg>', { headers: { 'Content-Type': 'image/svg+xml' }});
                           }
                       });
               })
