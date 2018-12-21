@@ -118,7 +118,7 @@ var build = gulp.parallel(styles,scripts);
 
 var live = gulp.series( clean, build, images, copy, serve, watch);
 
-var test = gulp.series( clean, build, serve, watch)
+var test = gulp.series( clean, build, copy, serve, watch)
 
 gulp.task(build);
 gulp.task(live);

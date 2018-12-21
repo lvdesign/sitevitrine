@@ -13,26 +13,26 @@
       return caches.open(version + staticCacheName)
           .then(function (cache) {
               return cache.addAll([
-                  'js/main.min.js',
-                  'css/bootstrap.min.css',
-                  'css/main.min.css',
-                  'img/fonds/fondFooter.svg',
-                  'img/imgfleurs/ex1.png',
-                  'img/imgfleurs/ex2.png',
-                  'img/imgfleurs/ex3.png',
-                  'img/imgfleurs/ex4.png',
-                  'img/imgfleurs/ex5.png',
-                  'img/imgfleurs/ex6.png',
-                  'img/imgfleurs/ex7.png',
-                  'img/imgfleurs/ex8.png',
-                  'img/insta/insta1.png',
-                  'img/insta/insta2.png',
-                  'img/insta/insta3.png',
-                  'img/picto/pictoF.svg',
-                  'img/roman-kraft-208004-unsplash.png',
-                  '/',
-                  '/index.html',
-                  '/offline.html'
+                  '/sitevitrine/js/main.min.js',
+                  '/sitevitrine/css/bootstrap.min.css',
+                  '/sitevitrine/css/main.min.css',
+                  '/sitevitrine/img/fonds/fondFooter.svg',
+                  '/sitevitrine/img/imgfleurs/ex1.png',
+                  '/sitevitrine/img/imgfleurs/ex2.png',
+                  '/sitevitrine/img/imgfleurs/ex3.png',
+                  '/sitevitrine/img/imgfleurs/ex4.png',
+                  '/sitevitrine/img/imgfleurs/ex5.png',
+                  '/sitevitrine/img/imgfleurs/ex6.png',
+                  '/sitevitrine/img/imgfleurs/ex7.png',
+                  '/sitevitrine/img/imgfleurs/ex8.png',
+                  '/sitevitrine/img/insta/insta1.png',
+                  '/sitevitrine/img/insta/insta2.png',
+                  '/sitevitrine/img/insta/insta3.png',
+                  '/sitevitrine/img/picto/pictoF.svg',
+                  '/sitevitrine/img/roman-kraft-208004-unsplash.png',
+                  '/sitevitrine/',
+                  '/sitevitrine/index.html',
+                  '/sitevitrine/offline.html'
               ]);
           });
   };
