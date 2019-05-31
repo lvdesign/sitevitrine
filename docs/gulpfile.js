@@ -68,7 +68,7 @@ function images() {
 }
 
 function copy(){
-  return gulp.src('*.{html,txt,xml,webmanifest,png,js}',{ dot: true })
+  return gulp.src('*.{html,txt,xml,webmanifest,png,js}')
   .pipe(gulp.dest('docs'));
 }
 
