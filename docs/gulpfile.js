@@ -9,6 +9,7 @@ var rename = require('gulp-rename');
 const imagemin = require('gulp-imagemin');
 var del = require('del');
 var browserSync = require('browser-sync');
+var nodemon = require('gulp-nodemon');
 
 
 const server = browserSync.create();
@@ -30,6 +31,8 @@ function reload(done) {
   done();
 }
 
+// 
+
 
 var paths = {
   styles: {
@@ -43,6 +46,10 @@ var paths = {
   images:{
     src:'img/**/*.{png,jpg,svg}',
     dest: 'docs/img'
+  },
+  htmls:{
+    src:'*.{html,txt,xml,webmanifest,png,js}',
+    dest: 'docs/'
   }
 
 
@@ -97,9 +104,10 @@ function scripts(){
 
 //
 function watch(){
-  gulp.watch(paths.styles.src, styles);
+  gulp.watch(paths.htmls.src, copy);
   gulp.watch(paths.scripts.src, scripts );
   gulp.watch(paths.images.src, images );
+  gulp.watch(paths.styles.src, styles);
   //gulp.watch(paths.styles.src, gulp.series(styles,reload));
 }
 
@@ -118,7 +126,7 @@ var build = gulp.parallel(styles,scripts);
 
 var live = gulp.series( clean, build, images, copy, serve, watch);
 
-var test = gulp.series(  build, copy, serve, watch)
+var test = gulp.series( build, copy, serve, watch)
 
 gulp.task(build);
 gulp.task(live);
