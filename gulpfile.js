@@ -1,15 +1,17 @@
-
 'use strict';
 
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
-var rename = require('gulp-rename');
-const imagemin = require('gulp-imagemin');
-var del = require('del');
-var browserSync = require('browser-sync');
-var nodemon = require('gulp-nodemon');
+const gulp = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
+const rename = require('gulp-rename');
+//const imagemin = require('gulp-imagemin');
+const del = require('del');
+const browserSync = require('browser-sync');
+//const notify = require('gulp-notify');
+
+//import gulp from 'gulp';
+//import imagemin from 'gulp-imagemin';
 
 
 const server = browserSync.create();
@@ -40,7 +42,7 @@ var paths = {
     dest: 'docs/css'
   },
   scripts:{
-    src: ['js/vendor/jquery-3.3.1.min.js','js/vendor/jquery.easing.min.js','js/vendor/scrollreveal.min.js','js/vendor/bootstrap.js' ,'js/main.js'],
+    src: ['js/vendor/jquery-3.3.1.min.js','js/vendor/jquery.easing.min.js','js/vendor/scrollreveal.min.js','js/vendor/bootstrap.js','js/main.js'],
     dest: 'docs/js'
   },
   images:{
@@ -61,6 +63,38 @@ function clean(){
 
 function images() {
   return gulp.src(paths.images.src)
+  //.pipe(imagemin())
+  .pipe(gulp.dest(paths.images.dest))
+  //.pipe(notify("Images ok !"))
+  ;
+}
+
+
+/*
+function images() {
+  return gulp.src(paths.images.src)
+        .pipe(imagemin([gifsicle({interlaced: true}),
+          mozjpeg({quality: 75, progressive: true}),
+          optipng({optimizationLevel: 5}),
+          svgo({
+            plugins: [
+              {
+                name: 'removeViewBox',
+                active: true
+              },
+              {
+                name: 'cleanupIDs',
+                active: false
+              }
+            ]
+          })
+        ]))
+        .pipe(gulp.dest(paths.images.dest));
+}
+*/
+/*
+function images() {
+  return gulp.src(paths.images.src)
   .pipe(imagemin([
     imagemin.jpegtran({progressive: true}),
     imagemin.optipng({optimizationLevel: 5}),
@@ -73,7 +107,7 @@ function images() {
   ]))
   .pipe(gulp.dest(paths.images.dest));
 }
-
+*/
 function copy(){
   return gulp.src('*.{html,txt,xml,webmanifest,png,js}')
   .pipe(gulp.dest('docs'));
