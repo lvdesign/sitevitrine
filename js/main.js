@@ -61,6 +61,13 @@
     distance: '0px'
   }, 300);
 
+  // link
+  $('.navbar-nav .nav-link').click(function(){
+    $('.navbar-nav .nav-link').removeClass('active');
+    $(this).addClass('active');
+})
+
+//
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('https://lvdesign.github.io/sitevitrine/service-worker.js', { scope: 'https://lvdesign.github.io/sitevitrine/' }).then(function(reg) {
       // registration worked
