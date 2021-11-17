@@ -8,6 +8,16 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+_site/
+.sass-cache/
+
+*-cache/
+
+
+.jekyll-cache/
+.jekyll-metadata
+.myCMD.md
+.gulpfile
 .mydoc.md
 gulpfile.js
 
