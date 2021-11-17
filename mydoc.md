@@ -28,4 +28,6 @@ build puis copier _site vers /docs
  bundle add webrick
 
 
- 
+# Gulp pour Docs
+gulp.task('l', live);
+gulp.task( 't', test);
