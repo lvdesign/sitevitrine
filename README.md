@@ -103,7 +103,7 @@ ___
 - Bootstrap 4,
 - optimized update with Gulp 4,
 - Service Worker for a consultation of the site except Internet connection,
-- optimized for a fast web. [google PageSpeed ​​Insights test] (https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Flvdesign.github.io%2Fsitevitrine%2F&tab=desktop)
+- optimized for a fast web. [google PageSpeed insights test] (https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Flvdesign.github.io%2Fsitevitrine%2F&tab=desktop)
 
 
 #### Price for production and upload: 400 € ht

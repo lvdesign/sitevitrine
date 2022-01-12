@@ -142,7 +142,7 @@ function watch(){
   gulp.watch(paths.scripts.src, scripts );
   gulp.watch(paths.images.src, images );
   gulp.watch(paths.styles.src, styles);
-  //gulp.watch(paths.styles.src, gulp.series(styles,reload));
+  gulp.watch(paths.styles.src, gulp.series(styles,reload));
 }
 
 //
