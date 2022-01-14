@@ -1,5 +1,5 @@
 'use strict';
-
+//import imagemin from 'gulp-imagemin';
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const uglify = require('gulp-uglify');
@@ -46,15 +46,13 @@ var paths = {
     dest: 'docs/js'
   },
   images:{
-    src:'img/**/*.{png,jpg,svg}',
+    src:'img/**/*.{png,jpg,svg,webp}',
     dest: 'docs/img'
   },
   htmls:{
     src:'*.{html,txt,xml,webmanifest,png,js}',
     dest: 'docs/'
   }
-
-
 };
 
 function clean(){
@@ -63,11 +61,74 @@ function clean(){
 
 function images() {
   return gulp.src(paths.images.src)
-  //.pipe(imagemin())
   .pipe(gulp.dest(paths.images.dest))
-  //.pipe(notify("Images ok !"))
   ;
 }
+
+function copy(){
+  return gulp.src('*.{html,txt,xml,webmanifest,png,js}')
+  .pipe(gulp.dest('docs'));
+}
+
+function styles() {
+    return gulp.src(paths.styles.src)
+        .pipe(sass({
+            errorLogToConsole: true,
+            outputStyle: 'compressed'
+        }))
+        .on('error', console.error.bind(console))   // ici on utilise gulp-sass
+        .pipe( rename ({suffix: '.min'}))
+        .pipe(gulp.dest(paths.styles.dest));
+        }
+
+////.pipe(rename({extname: '.min.js'}))
+function scripts(){
+  return gulp
+  .src(paths.scripts.src, {
+    sourcemaps:true
+  })
+  .pipe(uglify())
+  .pipe(concat('main.min.js'))
+  .pipe(gulp.dest(paths.scripts.dest));
+}
+
+//
+function watch(){
+  gulp.watch(paths.htmls.src, copy);
+  gulp.watch(paths.scripts.src, scripts );
+  gulp.watch(paths.images.src, images );
+  gulp.watch(paths.styles.src, styles);
+  gulp.watch(paths.styles.src, gulp.series(styles,reload));
+}
+
+//
+exports.copy = copy;
+exports.clean= clean;
+exports.styles = styles;
+exports.scripts = scripts;
+exports.images = images;
+exports.watch = watch;
+exports.server = server;
+exports.reload = reload;
+//
+
+//var build = gulp.series(clean, gulp.parallel(styles));
+var build = gulp.parallel(styles,scripts);
+
+var live = gulp.series( clean, build, images, copy, serve, watch);
+
+var test = gulp.series( build, copy, serve, watch)
+
+
+
+gulp.task(build);
+gulp.task(live);
+gulp.task(test);
+
+gulp.task('default', build);
+
+gulp.task('l', live);
+gulp.task( 't', test);
 
 
 /*
@@ -108,66 +169,3 @@ function images() {
   .pipe(gulp.dest(paths.images.dest));
 }
 */
-function copy(){
-  return gulp.src('*.{html,txt,xml,webmanifest,png,js}')
-  .pipe(gulp.dest('docs'));
-}
-
-function styles() {
-    return gulp.src(paths.styles.src)
-        .pipe(sass({
-            errorLogToConsole: true,
-            outputStyle: 'compressed'
-        }))
-        .on('error', console.error.bind(console))   // ici on utilise gulp-sass
-        .pipe( rename ({suffix: '.min'}))
-        .pipe(gulp.dest(paths.styles.dest));
-        //.pipe(server.stream()); // browser
-}
-
-////.pipe(rename({extname: '.min.js'}))
-function scripts(){
-  return gulp
-  .src(paths.scripts.src, {
-    sourcemaps:true
-  })
-  .pipe(uglify())
-  .pipe(concat('main.min.js'))
-  .pipe(gulp.dest(paths.scripts.dest));
-}
-
-//
-function watch(){
-  gulp.watch(paths.htmls.src, copy);
-  gulp.watch(paths.scripts.src, scripts );
-  gulp.watch(paths.images.src, images );
-  gulp.watch(paths.styles.src, styles);
-  gulp.watch(paths.styles.src, gulp.series(styles,reload));
-}
-
-//
-exports.copy = copy;
-exports.clean= clean;
-exports.styles = styles;
-exports.scripts = scripts;
-exports.images = images;
-exports.watch = watch;
-exports.server = server;
-exports.reload = reload;
-//
-//var build = gulp.series(clean, gulp.parallel(styles));
-var build = gulp.parallel(styles,scripts);
-
-var live = gulp.series( clean, build, images, copy, serve, watch);
-
-var test = gulp.series( build, copy, serve, watch)
-
-gulp.task(build);
-gulp.task(live);
-gulp.task(test);
-
-gulp.task('default', build);
-
-gulp.task('l', live);
-gulp.task( 't', test);
-
